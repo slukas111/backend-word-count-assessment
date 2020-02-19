@@ -52,6 +52,13 @@ import sys
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 
+def build_dictionary(filename, 'r'): #helper
+    dictionary = {}
+#f = (filename, 'r')
+with open(filename, 'r') as f: 
+
+def print_words(filename): 
+def print_top(filename):
 
 def main():
     if len(sys.argv) != 3:
