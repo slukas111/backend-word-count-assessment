@@ -58,12 +58,19 @@ if sys.version_info[0] >= 3:
 def build_dictionary(filename): #helper
     dictionary = {}
 #f = (filename, 'r')
-with open(filename, 'r') as f: 
-
-def print_words(filename): 
+    with open(filename, 'r') as f: 
+        for line in f:
+            for word in line.lower().split():
+                if word in dictionary:
+                    dictionary[word] += 1
+                else:
+                    dictionary[word] = 1
+return dictionary
+print()
+#def print_words(filename): 
 def print_top(filename):
 
-def main():
+#def main():
     if len(sys.argv) != 3:
         print 'usage: python wordcount.py {--count | --topcount} file'
         sys.exit(1)
