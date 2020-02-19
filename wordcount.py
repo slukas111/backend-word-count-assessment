@@ -65,12 +65,30 @@ def build_dictionary(filename): #helper
                     dictionary[word] += 1
                 else:
                     dictionary[word] = 1
-return dictionary
-print()
-#def print_words(filename): 
-def print_top(filename):
+    return dictionary
 
-#def main():
+def print_words(filename):  
+    word_count = build_dictionary(filename)
+    words = word_count.keys()
+    for word in words:
+        count = word_count[word]
+        print(word, count)
+#def print_words(filename): 
+#def print_top(filename):
+
+def word_counter(word_tuple): 
+    return word_tuple[1]
+
+def  print_top(filename):
+    word_count = build_dictionary(filename)
+    top_words = sorted(word_count.items(), key = word_counter, reverse = True)
+    for top_word in top_words[:20]:
+        word = top_word[0]
+        count = top_word[1]
+        print(word, count)
+
+
+def main():
     if len(sys.argv) != 3:
         print 'usage: python wordcount.py {--count | --topcount} file'
         sys.exit(1)
