@@ -55,6 +55,8 @@ if sys.version_info[0] >= 3:
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 
+####$$$ Took several days, wanted to get this down. Command line help from Stew w. class vid.
+
 def build_dictionary(filename): #helper
     dictionary = {}
 #f = (filename, 'r')
@@ -86,7 +88,7 @@ def  print_top(filename):
         word = top_word[0]
         count = top_word[1]
         print(word, count)
-
+##printing out the first 20
 
 def main():
     if len(sys.argv) != 3:
