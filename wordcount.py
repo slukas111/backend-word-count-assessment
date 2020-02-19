@@ -40,6 +40,9 @@ print_words() and print_top().
 """
 
 import sys
+if sys.version_info[0] >= 3:
+        raise Exception("This program requires python2 interpreter")
+#Alert given by instructor 
 
 # +++your code here+++
 # Define print_words(filename) and print_top(filename) functions.
@@ -52,7 +55,7 @@ import sys
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
 
-def build_dictionary(filename, 'r'): #helper
+def build_dictionary(filename): #helper
     dictionary = {}
 #f = (filename, 'r')
 with open(filename, 'r') as f: 
